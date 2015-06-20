@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>SlimBroker</id>
-        <version>1.0.0</version>
+        <version>0.1</version>
         <authors>Fabrice Michellonet</authors>
         <projectUrl>https://github.com/fmichellonet/SlimBroker</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,6 +11,6 @@
         <tags>Service Bus, Message Broker</tags>
     </metadata>
     <files>
-        <file src="lib\SlimBroker.dll" target="lib\SlimBroker.dll" />
+        <file src="SlimBroker.dll" target="lib\SlimBroker.dll" />
     </files>
 </package>
