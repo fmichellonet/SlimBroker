@@ -11,6 +11,6 @@
         <tags>Service Bus, Message Broker</tags>
     </metadata>
     <files>
-        <file src="SlimBroker.dll" target="lib\SlimBroker.dll" />
+        <file src="bin/debug/SlimBroker.dll" target="lib\SlimBroker.dll" />
     </files>
 </package>
