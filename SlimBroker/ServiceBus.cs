@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SlimBroker
 {
-    public class ServiceBus : IServiceBus
+    public class ServiceBus : IServiceBus, IDispatcher
     {
         private readonly List<IChannel> _channels;
 
@@ -28,10 +28,15 @@ namespace SlimBroker
                      .ToList()
                      .ForEach(ch => ch.Register(action));
         }
-
+        
         public void AddChannel(IChannel channel)
         {
             _channels.Add(channel);
+        }
+        
+        public void Dispatch<TMessage>(TMessage message)
+        {
+            Publish(message);
         }
     }
 }

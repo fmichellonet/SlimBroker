@@ -16,7 +16,6 @@ namespace SlimBroker.Tests
                                      .WithChannel(chnCfg =>
                                          {
                                              chnCfg.Channel = new InProcChannel(new NoFilter(), new IsResolver()) { Name = channelName };
-                                             chnCfg.ForMessages(new[] {typeof (StringMessage)});
                                          })
                                      .Build();
             bus.Subscrive<StringMessage>(message => { msgCount++; });

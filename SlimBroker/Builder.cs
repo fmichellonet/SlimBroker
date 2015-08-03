@@ -40,12 +40,22 @@ namespace SlimBroker
             _buildingBus.AddChannel(cfg.Channel);
             return this;
         }
+
+        // Configure a new channel passing a reference to the dispatcher
+        public IConfiguringBuilder WithChannel(Action<IDispatcher, ChannelConfig> action)
+        {
+            ChannelConfig cfg = new ChannelConfig();
+            action.Invoke(_buildingBus, cfg);
+            _buildingBus.AddChannel(cfg.Channel);
+            return this;
+        }
     }
 
     public interface IConfiguringBuilder
     {
         IServiceBus Build();
         IConfiguringBuilder WithChannel(Action<ChannelConfig> action);
+        IConfiguringBuilder WithChannel(Action<IDispatcher, ChannelConfig> action);
     }
 
     public class ChannelConfig
@@ -57,11 +67,6 @@ namespace SlimBroker
         public ChannelConfig()
         {
             Channel = new InProcChannel(new NoFilter(), new IsResolver()) {Name = Guid.NewGuid().ToString()};
-        }
-
-        public void ForMessages(Type[] types)
-        {
-            MsgTypes = types;
         }
     }
 }

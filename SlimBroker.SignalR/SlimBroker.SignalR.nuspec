@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>SlimBroker.SignalR</id>
+        <version>0.1</version>
+        <authors>Fabrice Michellonet</authors>
+        <projectUrl>https://github.com/fmichellonet/SlimBroker</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A SignalR channel implementation for SlimBroker</description>
+        <language>en-US</language>
+        <tags>Service Bus, Message Broker, SignalR</tags>
+      <dependencies>
+        <dependency id="Microsoft.AspNet.Cors" version="5.2.3" />
+        <dependency id="Microsoft.AspNet.SignalR.Client" version="2.2.0" />
+        <dependency id="Microsoft.AspNet.SignalR.Core" version="2.2.0" />
+        <dependency id="Microsoft.AspNet.SignalR.SelfHost" version="2.2.0" />
+        <dependency id="Microsoft.Owin" version="3.0.1" />
+        <dependency id="Microsoft.Owin.Cors" version="3.0.1" />
+        <dependency id="Microsoft.Owin.Diagnostics" version="3.0.1" />
+        <dependency id="Microsoft.Owin.Host.HttpListener" version="3.0.1" />
+        <dependency id="Microsoft.Owin.Hosting" version="3.0.1" />
+        <dependency id="Microsoft.Owin.Security" version="3.0.1" />
+        <dependency id="Microsoft.Owin.SelfHost" version="3.0.1" />
+        <dependency id="Newtonsoft.Json" version="6.0.4" />
+        <dependency id="Owin" version="1.0.0" />
+      </dependencies>
+    </metadata>
+    <files>
+        <file src="bin/SlimBroker.SignalR.dll" target="lib\SlimBroker.SignalR.dll" />
+    </files>
+</package>
