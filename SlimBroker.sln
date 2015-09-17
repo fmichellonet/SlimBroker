@@ -11,6 +11,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimBroker.SignalR", "SlimB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimBroker.SignalR.Tests", "SlimBroker.SignalR.Tests\SlimBroker.SignalR.Tests.csproj", "{369D8198-69F4-4A0D-90D7-8061A51DA8F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlimBroker.js", "SlimBroker.js\SlimBroker.js.csproj", "{21C021C3-C15B-497F-9B18-09CA7D1201E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{226DB2A6-480F-4916-AFED-77B14EF137A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HubServer", "ConsoleHub\HubServer.csproj", "{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chat", "Chat", "{C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChatClient", "WebChatClient\WebChatClient.csproj", "{515C0225-4857-4C4D-9706-2AE4CAC91E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleChatClient", "ConsoleChatClient\ConsoleChatClient.csproj", "{F664E868-7D08-455A-94C1-9F068BC2DA38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Model", "Chat.Model\Chat.Model.csproj", "{07663AEA-B80F-4488-8585-FD3C6EC2C843}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +50,35 @@ Global
 		{369D8198-69F4-4A0D-90D7-8061A51DA8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{369D8198-69F4-4A0D-90D7-8061A51DA8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{369D8198-69F4-4A0D-90D7-8061A51DA8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21C021C3-C15B-497F-9B18-09CA7D1201E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C021C3-C15B-497F-9B18-09CA7D1201E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C021C3-C15B-497F-9B18-09CA7D1201E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C021C3-C15B-497F-9B18-09CA7D1201E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{515C0225-4857-4C4D-9706-2AE4CAC91E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{515C0225-4857-4C4D-9706-2AE4CAC91E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{515C0225-4857-4C4D-9706-2AE4CAC91E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{515C0225-4857-4C4D-9706-2AE4CAC91E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F664E868-7D08-455A-94C1-9F068BC2DA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F664E868-7D08-455A-94C1-9F068BC2DA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F664E868-7D08-455A-94C1-9F068BC2DA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F664E868-7D08-455A-94C1-9F068BC2DA38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07663AEA-B80F-4488-8585-FD3C6EC2C843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07663AEA-B80F-4488-8585-FD3C6EC2C843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07663AEA-B80F-4488-8585-FD3C6EC2C843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07663AEA-B80F-4488-8585-FD3C6EC2C843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF16C5D2-70D4-49BD-B2D9-EF6EE5FE160C} = {C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9}
+		{C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9} = {226DB2A6-480F-4916-AFED-77B14EF137A5}
+		{515C0225-4857-4C4D-9706-2AE4CAC91E99} = {C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9}
+		{F664E868-7D08-455A-94C1-9F068BC2DA38} = {C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9}
+		{07663AEA-B80F-4488-8585-FD3C6EC2C843} = {C309B6A0-CFF8-4C25-927E-6F4AD3EBD7D9}
 	EndGlobalSection
 EndGlobal

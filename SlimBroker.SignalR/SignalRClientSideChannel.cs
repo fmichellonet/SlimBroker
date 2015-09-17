@@ -19,7 +19,7 @@ namespace SlimBroker.SignalR
 
         public void Publish<TMessage>(TMessage message)
         {
-            _hub.Invoke("Publish", message, message.GetType().ToString())
+            _hub.Invoke("Publish", message, message.GetType().AssemblyQualifiedName)
                 .Wait();
         }
         
@@ -30,7 +30,7 @@ namespace SlimBroker.SignalR
             Task registering = null;
             try
             {
-                registering = _hub.Invoke("Register", "Callback", msgType.ToString());
+                registering = _hub.Invoke("Register", "Callback", msgType.AssemblyQualifiedName);
                 _hub.On<TMessage>("Callback", (msg) =>
                 {
                     action.Invoke(msg);

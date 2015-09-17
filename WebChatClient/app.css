@@ -1,0 +1,13 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+#content {
+    border: solid black 1px;
+    overflow: auto;
+    height: 200px;
+}

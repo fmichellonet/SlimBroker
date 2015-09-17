@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
 using Microsoft.CSharp.RuntimeBinder;
+using Newtonsoft.Json.Linq;
 using Binder = Microsoft.CSharp.RuntimeBinder.Binder;
 
 namespace SlimBroker.SignalR
@@ -28,8 +29,8 @@ namespace SlimBroker.SignalR
 
             var buildActionType = typeof (Func<,>).MakeGenericType(typeof (RoutingConfig), actionT);
             Delegate buildActionDelegate = Delegate.CreateDelegate(buildActionType, this,
-                                                    GetType().GetMethod("BuildAction", BindingFlags.NonPublic | BindingFlags.Instance)
-                                                             .MakeGenericMethod(msgType));
+                GetType().GetMethod("BuildAction", BindingFlags.NonPublic | BindingFlags.Instance)
+                    .MakeGenericMethod(msgType));
 
             RoutingConfig config = new RoutingConfig(callback, Context.ConnectionId);
             var unwrappedAction = buildActionDelegate.DynamicInvoke(config);
@@ -40,7 +41,7 @@ namespace SlimBroker.SignalR
             // _channel.Register( () => {unwrappedAction};)
             channelRegisterMethod.Invoke(_channel, new[] {unwrappedAction});
         }
-        
+
         /// <summary>
         ///     Capture the routing parameter and generate the corresponding Action<TMessage>
         /// </summary>
@@ -68,10 +69,18 @@ namespace SlimBroker.SignalR
             var callSite = CallSite<Action<CallSite, object, TMessage>>.Create(callSiteBinder);
             callSite.Target(callSite, recipient, msg);
         }
-        
+
         public void Publish(object message, string messageType)
         {
             Type msgType = Type.GetType(messageType);
+
+
+            // when receiving json from client, we cast it back to typed object.
+            JObject jo = message as JObject;
+            if (jo != null)
+            {
+                message = jo.ToObject(msgType);
+            }
 
             // _channel.Dispatch(message)
             MethodInfo method = _channel.GetType().GetMethod("Dispatch").MakeGenericMethod(msgType);

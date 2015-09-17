@@ -29,7 +29,7 @@ namespace SlimBroker.SignalR
         {
             Type msgType = typeof(TMessage);
             if (!_filter.Accept<TMessage>())
-                throw new InvalidOperationException(string.Format("Channel {0} is not configured to publish {1} messages", Name, msgType));
+                throw new InvalidOperationException($"Channel {Name} is not configured to publish {msgType} messages");
 
             var subscriber = _resolver.SubscribersFor<TMessage>();
 
@@ -41,8 +41,7 @@ namespace SlimBroker.SignalR
         {
             Type msgType = typeof (TMessage);
             if (!_filter.Accept<TMessage>())
-                throw new InvalidOperationException(
-                    string.Format("Channel {0} is not configured to publish {1} messages", Name, msgType));
+                throw new InvalidOperationException($"Channel {Name} is not configured to publish {msgType} messages");
 
             _resolver.RegisterFor(action);
         }

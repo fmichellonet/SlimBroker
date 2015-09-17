@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>HTML Chat client</title>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+    <script src="app.js"></script>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="Scripts/SlimBroker.js"></script>
+</head>
+<body>
+<div>
+    <h3>Config</h3>
+    <form>
+        <div>
+            <label for="ServerUrl">Server Url</label>
+            <input id="ServerUrl"/>
+            <span id="cnxState"></span>
+        </div>
+        <button type="button" id="connect">Connect</button>
+    </form>
+</div>
+<div>
+    <h3>Chat room</h3>
+    <div id="content"></div>
+    <input type="text" id="message"/>
+    <button type="button" id="send">Send</button>
+</div>
+
+</body>
+</html>
