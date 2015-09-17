@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>SlimBroker.SignalR</id>
-        <version>0.1</version>
+        <version>0.2</version>
         <authors>Fabrice Michellonet</authors>
         <projectUrl>https://github.com/fmichellonet/SlimBroker</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -10,6 +10,7 @@
         <language>en-US</language>
         <tags>Service Bus, Message Broker, SignalR</tags>
       <dependencies>
+        <dependency id="SlimBroker" version="0.3" />
         <dependency id="Microsoft.AspNet.Cors" version="5.2.3" />
         <dependency id="Microsoft.AspNet.SignalR.Client" version="2.2.0" />
         <dependency id="Microsoft.AspNet.SignalR.Core" version="2.2.0" />
