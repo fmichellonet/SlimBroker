@@ -23,15 +23,21 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SlimBroker.js.TypeScript.nuspec" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\typings\signalr\signalr.d.ts" />
+    <None Include="SlimBroker.d.ts" />
     <TypeScriptCompile Include="SlimBroker.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="SlimBroker.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SlimBroker.js.nuspec" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SlimBroker.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
@@ -64,7 +70,7 @@
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptTarget>ES6</TypeScriptTarget>
     <TypeScriptModuleKind>none</TypeScriptModuleKind>
-    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptRemoveComments>true</TypeScriptRemoveComments>

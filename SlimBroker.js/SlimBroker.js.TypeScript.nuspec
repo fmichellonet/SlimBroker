@@ -1,21 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
-        <id>SlimBroker.js</id>
+        <id>SlimBroker.js.TypeScript</id>
         <version>0.1.3</version>
         <authors>Fabrice Michellonet</authors>
         <projectUrl>https://github.com/fmichellonet/SlimBroker</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>A javascript channel implementation for SlimBroker</description>
+        <description>A typescript channel implementation for SlimBroker</description>
         <language>en-US</language>
         <tags>Service Bus, Message Broker, SignalR</tags>
       <dependencies>
-        <dependency id="jQuery" version="2.1.4"/>
-        <dependency id="Microsoft.AspNet.SignalR.JS" version="2.2.0"/>
+        <dependency id="SlimBroker.js" version="0.1.3"/>
       </dependencies>
     </metadata>
     <files>
-        <file src="SlimBroker.js" target="content\Scripts\SlimBroker.js" />
-        <file src="SlimBroker.js.map" target="content\Scripts\SlimBroker.js.map" />
+        <file src="SlimBroker.d.ts" target="content\Scripts\typings\SlimBroker.js" />
     </files>
 </package>
