@@ -19,6 +19,17 @@ You can easily send message on the bus; Fire and forget.
 ```csharp
 bus.Publish<string>("new message");
 ```
+The bus will dispatch this message to all subscribers.
 
 ### Channels
 
+Channels are deeply rooted at the heart of SlimBroker. They allow the extensibility of the bus accross multiple devices, network etc.
+
+#### In Proc channel
+
+An inproc channel runs in the same process as the calling application. 
+The typical use case is a Task based process that use the bus to achieve uncoupling between producers and consumers.
+
+#### SignalR channel
+
+Asynchronous communication between multiple devices over http can be achieved with this channel.
