@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>SlimBroker.js.TypeScript</id>
-        <version>0.1.4</version>
+        <version>0.1.6</version>
         <authors>Fabrice Michellonet</authors>
         <projectUrl>https://github.com/fmichellonet/SlimBroker</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -11,9 +11,10 @@
         <tags>Service Bus, Message Broker, SignalR</tags>
       <dependencies>
         <dependency id="SlimBroker.js" version="0.1.4"/>
+        <dependency id="signalr.TypeScript.DefinitelyTyped" version="0.1.8"/>
       </dependencies>
     </metadata>
     <files>
-        <file src="SlimBroker.d.ts" target="content\Scripts\typings\SlimBroker.d.ts" />
+        <file src="SlimBroker.d.ts" target="content\Scripts\typings\SlimBroker\SlimBroker.d.ts" />
     </files>
 </package>

@@ -73,6 +73,14 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SlimBroker, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SlimBroker.0.3\lib\net45\SlimBroker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SlimBroker.SignalR, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SlimBroker.SignalR.0.2\lib\net452\SlimBroker.SignalR.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -98,14 +106,6 @@
     <ProjectReference Include="..\Chat.Model\Chat.Model.csproj">
       <Project>{07663aea-b80f-4488-8585-fd3c6ec2c843}</Project>
       <Name>Chat.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SlimBroker.SignalR\SlimBroker.SignalR.csproj">
-      <Project>{cfdb9dfe-d6ad-4bc6-ab5f-ca38bf24f5fd}</Project>
-      <Name>SlimBroker.SignalR</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SlimBroker\SlimBroker.csproj">
-      <Project>{46da9843-c75d-4bf6-8f49-c7ce94586740}</Project>
-      <Name>SlimBroker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
