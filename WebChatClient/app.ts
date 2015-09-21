@@ -1,4 +1,4 @@
-﻿/// <reference path="../slimbroker.js/slimbroker.ts" />
+﻿/// <reference path="scripts/typings/slimbroker.d.ts" />
 
 interface IChatMessage {
     Sender: string;
