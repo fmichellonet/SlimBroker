@@ -12,7 +12,7 @@ An in-proc channel is created for you under the hood, which let you connect mult
 
 Now that you've built a bus, you can easily subscribe to a message type and decide how to handle them.
 ```csharp
-bus.Subscrive<string>(message => { Console.WriteLine(message);});
+bus.Subscribe<string>(message => { Console.WriteLine(message);});
 ```
 
 You can easily send message on the bus; fire and forget!
@@ -23,7 +23,7 @@ The bus will dispatch this message to all subscribers.
 
 ### Channels
 
-Channels are deeply rooted at the heart of SlimBroker. They allow the extensibility of the bus accross multiple devices, network etc.
+Channels are deeply rooted at the heart of SlimBroker. They allow the extensibility of the bus accross multiple devices, network, protocols etc.
 
 #### In Proc channel
 
@@ -33,3 +33,27 @@ The typical use case is a Task based process that use the bus to achieve uncoupl
 #### SignalR channel
 
 Asynchronous communication between multiple devices over http can be achieved with this channel.
+To create a bus with a SignalR channel you would use on the server side :
+```csharp
+string sinkUrl = "http://localhost:8894";
+IServiceBus bus = Builder.Configure()
+    .WithChannel((dispatcher, chnCfg) =>
+    {
+        chnCfg.Channel = new SignalRServerSideChannel(dispatcher, new NoFilter(), new IsResolver(), sinkUrl)
+        {
+            Name = "SignalRChannel1"
+        };
+    })
+    .Build();
+```
+
+On the client side instead you can use the following code :
+```csharp
+string sinkUrl = "http://localhost:8894";
+IServiceBus bus =
+    Builder.Configure()
+        .WithChannel(chnCfg => { chnCfg.Channel = new SignalRClientSideChannel(sinkUrl); })
+        .Build();
+```
+
+and then simply use Publish and Subscribe bus' methods without paying attention to the underlying declared channels.
