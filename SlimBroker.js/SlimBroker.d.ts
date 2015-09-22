@@ -1,4 +1,4 @@
-/// <reference path="scripts/typings/signalr/signalr.d.ts" />
+/// <reference path="../signalr/signalr.d.ts" />
 interface SignalR {
     channelHubConnection: ISlimBrokerHubConnection;
 }
