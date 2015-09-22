@@ -57,3 +57,30 @@ IServiceBus bus =
 ```
 
 and then simply use Publish and Subscribe bus' methods without paying attention to the underlying declared channels.
+
+### Web ready
+
+You'd like to use SlimBroker.js which implements a SignalR channel when developping in javascript or TypeScript.
+```TypeScript
+var serverUrl = "http://localhost:8894";
+var bus: SlimBroker.ServiceBus;
+bus = new SlimBroker.ServiceBus();
+bus.addChannel(new SlimBroker.ClientSideSignalRChannel(serverUrl, () => {
+                this.bus.register((msg: string) => { Console.Log(msg); }, "System.String");
+            }
+        );
+```
+In this example, we've configured a signalR channel and when the channel is connected, we register a callback to handle messages of type System.String
+
+Likewise, you can send a message easily :
+```TypeScript
+bus.publish(chatMessage, "Sytem.String");
+```
+
+## How to start
+
+Retrieve the needed packages via nuget and you're ready 
+```sh
+Install-Package SlimBroker
+```
+You might also have a look to the sample folder in the source code.
