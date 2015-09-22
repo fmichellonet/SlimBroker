@@ -15,7 +15,7 @@ Now that you've built a bus, you can easily subscribe to a message type and deci
 bus.Subscrive<string>(message => { Console.WriteLine(message);});
 ```
 
-You can easily send message on the bus; Fire and forget.
+You can easily send message on the bus; fire and forget!
 ```csharp
 bus.Publish<string>("new message");
 ```
