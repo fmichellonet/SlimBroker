@@ -36,7 +36,7 @@ namespace SlimBroker.Tests
             {
                 bool shouldContinue = true;
 
-                bus.Subscrive<StringMessage>(message =>
+                bus.Subscribe<StringMessage>(message =>
                 {
                     received1++;
                     if (message.Message == "TERMINATE")
@@ -54,7 +54,7 @@ namespace SlimBroker.Tests
             {
                 bool shouldContinue = true;
 
-                bus.Subscrive<StringMessage>(message =>
+                bus.Subscribe<StringMessage>(message =>
                 {
                     received2++;
                     if (message.Message == "TERMINATE")

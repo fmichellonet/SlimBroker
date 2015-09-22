@@ -51,7 +51,7 @@ namespace SlimBroker.SignalR.Tests
                 })
                 .Build();
                 
-                clientBus.Subscrive<string>(msg =>
+                clientBus.Subscribe<string>(msg =>
                 {
                     if(msg != helloMsg)
                         Assert.Fail();

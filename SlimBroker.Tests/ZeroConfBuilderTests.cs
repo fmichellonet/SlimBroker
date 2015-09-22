@@ -23,14 +23,14 @@ namespace SlimBroker.Tests
         public void CanSubscribeToAnything()
         {
             IServiceBus bus = Builder.Build();
-            bus.Subscrive<object>(message => {});
+            bus.Subscribe<object>(message => {});
         }
 
         [Test]
         public void CanSubscribeToTypedMessage()
         {
             IServiceBus bus = Builder.Build();
-            bus.Subscrive<StringMessage>(message => {});
+            bus.Subscribe<StringMessage>(message => {});
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace SlimBroker.Tests
             Action<StringMessage> subscriber = message => { called = true; };
             
             IServiceBus bus = Builder.Build();
-            bus.Subscrive(subscriber);
+            bus.Subscribe(subscriber);
             bus.Publish(strMessage);
 
             Assert.That(called, Is.True);

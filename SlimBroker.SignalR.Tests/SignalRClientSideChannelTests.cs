@@ -92,7 +92,7 @@ namespace SlimBroker.SignalR.Tests
                         .WithChannel(chnCfg => { chnCfg.Channel = new SignalRClientSideChannel(sinkUrl); })
                         .Build();
 
-                bus.Subscrive<string>((s =>
+                bus.Subscribe<string>((s =>
                 {
                     if (s != msg)
                         Assert.Fail();

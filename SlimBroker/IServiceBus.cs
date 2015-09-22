@@ -5,7 +5,7 @@ namespace SlimBroker
 {
     public interface IServiceBus
     {
-        void Subscrive<TMessage>(Action<TMessage> action);
+        void Subscribe<TMessage>(Action<TMessage> action);
         void Publish<TMessage>(TMessage message);
         IEnumerable<IChannel> Channels { get;}
     }

@@ -27,7 +27,7 @@ namespace ConsoleChatClient
                             (dispacher, chnCfg) => { chnCfg.Channel = new SignalRClientSideChannel(sinkUrl); })
                         .Build();
                 Console.WriteLine($"Client connected to {sinkUrl}");
-                bus.Subscrive<ChatMessage>(msg => { Console.WriteLine($"[{msg.Sender}] : {msg.Message}"); });
+                bus.Subscribe<ChatMessage>(msg => { Console.WriteLine($"[{msg.Sender}] : {msg.Message}"); });
 
                 while (running)
                 {

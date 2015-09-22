@@ -22,7 +22,7 @@ namespace SlimBroker
 
         public IEnumerable<IChannel> Channels { get { return _channels; }}
 
-        public void Subscrive<TMessage>(Action<TMessage> action)
+        public void Subscribe<TMessage>(Action<TMessage> action)
         {
             _channels.Where(ch => ch.Accepts<TMessage>())
                      .ToList()
